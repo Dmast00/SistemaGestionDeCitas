@@ -1,0 +1,46 @@
+﻿@page
+@model LoginModel
+@{
+    Layout = "_LoginLayout";
+}
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+    
+        <div class="col-3 login" >
+            <div class="d-flex justify-content-center">
+                <p>
+                    <h1>
+                        Login
+                    </h1>
+                </p>
+            </div>
+            <form method="post">
+                <div class="mb-3">
+                    <div class="form-floating m-1">
+                        <input type="email" id="email" class="form-control" asp-for="Login.Email" placeholder="Email"/>
+                        <label class="form-label" for="email">Email</label>
+                    </div>
+
+                    <div class="form-floating m-1">
+                        <input type="password" id="password" class="form-control" asp-for="Login.Password" type="password" placeholder="Password"/>
+                        <label class="form-label" for="password">Password</label>
+                    </div>
+
+                    <div class="mb-1" style="display:flex; justify-content:center;">
+                        <button type="submit" class="btn btn-primary col-8 m-2 p-1"> Login</button>
+                    </div>
+
+                    <div class="mb-1">
+                        <small class="d-flex justify-content-center">
+                            <p>Not Registered?
+                                <a href="/Account/Register" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Register</a>
+                            </p>
+                        </small>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    
+
+</div>
+
