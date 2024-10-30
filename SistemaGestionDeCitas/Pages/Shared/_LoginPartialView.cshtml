@@ -10,13 +10,13 @@
 @if (SignInManager.IsSignedIn(User))
 {
     <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm" class="navbar-right ">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right d-flex flex-md-column justify-content-center align-items-center align-content-center">
             
             <li >
-                <p asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)</p>
+                <p asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><b>@UserManager.GetUserName(User)</b></p>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+                <button type="submit" class="btn btn-outline-secondary btn-sm col-lg-12 navbar-btn navbar-link">Logout</button>
             </li>
 
             
