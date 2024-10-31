@@ -30,21 +30,27 @@ namespace SistemaGestionDeCitas.Pages.Account
 
             if (res.Succeeded)
             {
+                var number = RandomNumber();
                 var user = await _spNetUserManager.FindByEmailAsync(Login.Email);
-                if (user != null && !user.EmailConfirmed)
+                if (user != null && !user.EmailConfirmed && number % 2 ==  1)
                 {
+
                     return Redirect("/Account/ConfirmEmail"); 
 
                 }
 
-                return Redirect("/");
 
             }
-            else
-            {
-                return Redirect("/");
+            return Redirect("/");
+            
+        }
 
-            }
+        public int RandomNumber()
+        {
+            Random rdm = new Random();
+            int number = rdm.Next(10);
+
+            return number;
         }
     }
 }
